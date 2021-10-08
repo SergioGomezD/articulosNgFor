@@ -6,6 +6,28 @@
   </div>
   <hr>
 
+
+  <form action="form-row">
+    <div class="form-group col-md-2">
+      <label for="nombre" >Codigo</label>
+      <input type="number" class="form-control" name="codigo" id="codigoI" placeholder="Ingrese un codigo" [(ngModel)]="codigo" >
+  </div>
+  <div class="form-group col-md-2">
+    <label for="apellido" >Descripcion</label>
+    <input type="text" class="form-control" name="descripcion" id="descripcionI" placeholder="Apellido de articulo" [(ngModel)]="descripcion" >
+  </div>
+  <div class="form-group col-md-2">
+    <label for="apellido" >Precio</label>
+    <input type="number" class="form-control" name="precio" id="precioI" placeholder="Ingrese un precio" [(ngModel)]="precio" >
+  </div>
+
+  <br>
+  <div class="col">
+    <button type="submit" class="btn btn-primary" (click)="agregarArticulo()">Agregar</button>
+    <button type="submit" class="btn btn-primary" (click)="modificarArticulo()">Modificar</button>
+  </div>
+</form>
+
 <table class="table table-dark table-sm">
   <thead>
     <tr>
@@ -22,28 +44,8 @@
       <td>{{ articulo.descripcion }}</td>
       <td>{{ articulo.precio }}</td>
       <td><button type="submit" class="btn btn-danger" (click)="eliminarArticulo(i)">Eliminar</button></td>
-      <td><button type="submit" class="btn btn-success" (click)='eliminarArticulo(1)'>Seleccionar</button></td>
+      <td><button type="submit" class="btn btn-success" (click)="guardarArticulo(i)">Seleccionar</button></td>
     </tr>
   </tbody>
 </table>
 
-<form action="form-row">
-    <div class="form-group col-md-2">
-      <label for="nombre" >Codigo</label>
-      <input type="number" class="form-control" name="codigo" placeholder="Ingrese un codigo" [(ngModel)]="codigo" >
-  </div>
-  <div class="form-group col-md-2">
-    <label for="apellido" >Descripcion</label>
-    <input type="text" class="form-control" name="descripcion" placeholder="Apellido de articulo" [(ngModel)]="descripcion" >
-  </div>
-  <div class="form-group col-md-2">
-    <label for="apellido" >Precio</label>
-    <input type="number" class="form-control" name="precio" placeholder="Ingrese un precio" [(ngModel)]="precio" >
-  </div>
-
-  <br>
-  <div class="col">
-    <button type="submit" class="btn btn-primary" (click)="agregarArticulo()">Agregar</button>
-    <button type="submit" class="btn btn-primary" (click)="modificarArticulo()">Modificar</button>
-  </div>
-</form>
